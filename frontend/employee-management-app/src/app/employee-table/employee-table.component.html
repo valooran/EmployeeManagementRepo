@@ -1,1 +1,28 @@
-<p>employee-table works!</p>
+<h2>Employees</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Position</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.position}}</td>
+            <td>
+                <button (click)="deleteEmployee(employee.id)">Delete</button>
+                <button (click)="editEmployee(employee.id)">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
